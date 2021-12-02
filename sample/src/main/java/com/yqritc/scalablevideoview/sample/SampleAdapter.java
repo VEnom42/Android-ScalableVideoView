@@ -5,12 +5,14 @@ import com.yqritc.scalablevideoview.ScalableVideoView;
 
 import android.content.Context;
 import android.media.MediaPlayer;
-import android.support.annotation.RawRes;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.RawRes;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.IOException;
 
@@ -21,7 +23,7 @@ public class SampleAdapter extends RecyclerView.Adapter<SampleAdapter.ViewHolder
 
     @RawRes
     private int mVideoResId;
-    private LayoutInflater mLayoutInflater;
+    private final LayoutInflater mLayoutInflater;
 
     public SampleAdapter(Context context) {
         super();
@@ -29,6 +31,7 @@ public class SampleAdapter extends RecyclerView.Adapter<SampleAdapter.ViewHolder
         mLayoutInflater = LayoutInflater.from(context);
     }
 
+    @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = mLayoutInflater.inflate(R.layout.layout_sample_item, parent, false);
